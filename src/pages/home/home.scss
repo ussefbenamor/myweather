@@ -1,0 +1,53 @@
+@mixin alpha-background-color($color, $background) {
+  $percent: alpha($color) * 100%;
+  $opaque: opacify($color, 1);
+  $solid-color: mix($opaque, $background, $percent);
+  background-color: $solid-color;
+  background-color: $color;
+}
+
+
+ion-content {
+    background: url(http://www.naturepassionphoto.com/medias/images/paysage-ciel-orage-04.jpg);
+}
+
+page-home {
+        .font-xxsmall { font-size: 6px !important;}
+    .font-xsmall { font-size: 9px !important;}
+    .font-small { font-size: 12px !important;}
+    .font-meduim { font-size: 24px !important;}
+    .font-large { font-size: 48px !important;}
+    .home {
+        color: #ffffff;
+        ion-card {
+              @include alpha-background-color(rgba(black, 0.5), white);
+            position: relative;
+            text-align: center;
+             color: 'white'
+        }
+        .card-title {
+            position: absolute;
+            top: 36%;
+            font-size: 2.0em;
+            width: 100%;
+            font-weight: bold;
+            color: #fff;
+        }
+        .card-subtitle {
+            font-size: 1.0em;
+            position: absolute;
+            top: 52%;
+            width: 100%;
+            color: #fff;
+        }
+        .card-wp p  {
+            color: white;
+        }
+        .card-md p {
+            color: white;
+        }
+        .card-ios p {
+            color: white;
+        }
+    }
+}

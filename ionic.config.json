@@ -1,0 +1,8 @@
+{
+  "name": "Ma Météo",
+  "app_id": "mameteo.codeit.fr",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
