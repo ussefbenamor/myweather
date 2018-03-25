@@ -7,6 +7,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { RestListPage } from '../pages/rest-list/rest-list';
+import { DetailsPage } from '../pages/details/details';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -17,6 +18,10 @@ import { SearchPipe } from '../pipes/search/search';
 import { SortPipe } from '../pipes/sort/sort';
 import { RestApiProvider } from '../providers/rest-api/rest-api';
 import { PositionPage } from '../pages/position/position';
+import { LocalizationProvider } from '../providers/localization/localization';
+import { GlobalService } from '../shared/global.service';
+import { HttpModule } from '@angular/http';
+import { Geolocation } from '@ionic-native/geolocation';
 
 @NgModule({
   declarations: [
@@ -26,13 +31,15 @@ import { PositionPage } from '../pages/position/position';
     RestListPage, 
     SearchPipe,
     SortPipe,
-    PositionPage
+    PositionPage,
+    DetailsPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     ChartsModule, 
-    HttpClientModule
+    HttpClientModule, 
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -40,7 +47,8 @@ import { PositionPage } from '../pages/position/position';
     HomePage,
     ListPage, 
     RestListPage, 
-    PositionPage
+    PositionPage, 
+    DetailsPage
   ],
   providers: [
     HomeService,
@@ -48,7 +56,10 @@ import { PositionPage } from '../pages/position/position';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}, 
     ListCityProviderData, 
-    RestApiProvider
+    RestApiProvider,
+    LocalizationProvider,
+    GlobalService, 
+    Geolocation
   ], exports:[
     HomePage
   ]

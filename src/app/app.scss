@@ -22,9 +22,20 @@
   background-color: $color;
 }
 ion-menu{
-    @include alpha-background-color(rgba(black, 0.5), white);
-ion-content {
-     @include alpha-background-color(rgba(black, 0.5), white);
-     color: white;
-}
+    .slider{
+         background:  #20706c;
+        color: white;
+        .slider-list{
+             background:    #20706c;
+        color: white;
+        button{
+            background:   #20706c;
+        color: white; 
+        ion-icon{
+            padding-right: 10px;
+        }
+        }
+        }
+    }
+
 }

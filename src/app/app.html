@@ -5,8 +5,8 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-content >
-    <ion-list >
+  <ion-content class="slider">
+    <ion-list class="slider-list">
       <button  menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
         <ion-icon [name]="p.icon"></ion-icon> {{p.title}}
       </button>

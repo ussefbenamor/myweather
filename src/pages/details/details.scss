@@ -1,0 +1,38 @@
+@mixin alpha-background-color($color, $background) {
+  $percent: alpha($color) * 100%;
+  $opaque: opacify($color, 1);
+  $solid-color: mix($opaque, $background, $percent);
+  background-color: $solid-color;
+  background-color: $color;
+}
+
+page-details {
+    @include alpha-background-color(rgba(black, 0.5), white);
+    color: 'white';
+    ion-content{
+        @include alpha-background-color(rgba(black, 0.5), white);
+        color: 'white';
+        ion-list{
+            ion-item{
+                @include alpha-background-color(rgba(black, 0.5), white);
+                color: 'white';
+                
+            }
+        }
+
+    }
+    .item-md{
+        @include alpha-background-color(rgba(black, 0.5), white);
+        color: white;
+        p{
+                   color: lightgrey; 
+        }
+    }
+        .toolbar-md{
+        @include alpha-background-color(rgba(black, 0.5), white);
+        color: white;
+        p{
+                   color: lightgrey; 
+        }
+    }
+}
